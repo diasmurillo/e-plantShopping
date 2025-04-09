@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://diasmurillo.github.io/e-plantShopping/",
+  "homepage": "https://diasmurillo.github.io/e-plantShopping-custom/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
