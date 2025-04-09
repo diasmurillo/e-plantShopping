@@ -10,7 +10,6 @@ export const CartSlice = createSlice({
       const { name, image, cost } = action.payload;
       const existingItem = state.items.find(item => item.name === name);
 
-      // Convert the cost to a float number
       const parsedCost = parseFloat(cost.substring(1)); // Remove the "$" symbol
 
       if (existingItem) {

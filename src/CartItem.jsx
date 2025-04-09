@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeItem, updateQuantity, addItem } from './CartSlice'; // ✅ addItem importado
+import { removeItem, updateQuantity, addItem } from './CartSlice';
 import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
@@ -15,14 +15,11 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleIncrement = (item) => {
-    // ✅ Poderia ser updateQuantity OU addItem
     dispatch(updateQuantity({
       name: item.name,
       quantity: item.quantity + 1
     }));
     
-    // Ou, se preferir garantir que sempre adiciona corretamente:
-    // dispatch(addItem({ ...item, quantity: 1 }));
   };
 
   const handleDecrement = (item) => {
@@ -32,12 +29,12 @@ const CartItem = ({ onContinueShopping }) => {
         quantity: item.quantity - 1
       }));
     } else {
-      dispatch(removeItem(item.name)); // ✅ Remove se chegar a 0
+      dispatch(removeItem(item.name));
     }
   };
 
   const handleRemove = (item) => {
-    dispatch(removeItem(item.name)); // ✅ Remoção direta
+    dispatch(removeItem(item.name)); 
   };
 
   const calculateTotalCost = (item) => {
@@ -47,7 +44,7 @@ const CartItem = ({ onContinueShopping }) => {
 
   const handleContinueShopping = (e) => {
     e.preventDefault();
-    onContinueShopping(); // ✅ Agora chama a função corretamente
+    onContinueShopping(); 
   };
 
   return (

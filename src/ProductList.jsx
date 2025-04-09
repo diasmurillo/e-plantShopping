@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import './ProductList.css';
 import CartItem from './CartItem';
 import { useDispatch, useSelector } from 'react-redux';
-import { addItem } from './CartSlice'; // Certifique-se de que o caminho esteja correto
+import { addItem } from './CartSlice'; 
 
 function ProductList({ onHomeClick }) {
     const [showCart, setShowCart] = useState(false);
     const [showPlants, setShowPlants] = useState(false);
 
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.cart.items); // Estado do carrinho
+    const cartItems = useSelector(state => state.cart.items); 
 
     const getItemQuantity = (productName) => {
         const item = cartItems.find(i => i.name === productName);
@@ -38,7 +38,7 @@ function ProductList({ onHomeClick }) {
     };
 
     const handleAddToCart = (product) => {
-        dispatch(addItem(product)); // Despacha para o Redux
+        dispatch(addItem(product)); 
     };
 
     const styleObj = {
